@@ -3,7 +3,7 @@ package asylumdev.adgresources;
 import org.apache.logging.log4j.Logger;
 
 import asylumdev.adglib.ADGLib;
-import asylumdev.adglib.proxy.CommonProxy;
+import asylumdev.adgresources.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
