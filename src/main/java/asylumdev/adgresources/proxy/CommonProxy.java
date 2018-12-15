@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod.EventBusSubscriber
 public class CommonProxy {
 	public static Configuration config;
+	
     public void preInit(FMLPreInitializationEvent e) {
     	File directory = e.getModConfigurationDirectory();
         config = new Configuration(new File(directory.getPath(), "adg/adgresources.cfg"));
@@ -34,10 +35,12 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
+    	
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
+    	
     }
 		
 }
