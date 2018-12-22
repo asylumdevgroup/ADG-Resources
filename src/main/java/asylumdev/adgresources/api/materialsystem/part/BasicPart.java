@@ -1,5 +1,9 @@
 package asylumdev.adgresources.api.materialsystem.part;
 
-public class BasicPart {
+import asylumdev.adgresources.api.materialsystem.material.BasicMaterial;
 
+public class BasicPart {
+	public BasicPart(BasicMaterial mat) {
+		
+	}
 }

@@ -12,8 +12,8 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 
 version = "1.0"
-group = "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+group = "asylumdev.adgresources" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "ADGResources"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {
@@ -21,7 +21,7 @@ compileJava {
 }
 
 minecraft {
-    version = "1.12.2-14.23.5.2768"
+    version = "${mc_version}-${forge_version}"
     runDir = "run"
     
     // the mappings can be changed at any time, and must be in the following format.
@@ -32,7 +32,12 @@ minecraft {
     mappings = "snapshot_20171003"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
-
+repositories {
+	maven { // CraftTweaker (aka MineTweaker3)
+        name 'jared maven'
+        url "http://maven.blamejared.com/"
+    }
+}
 dependencies {
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
@@ -54,7 +59,8 @@ dependencies {
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
-compile files ("libs/ADGLib-0.0.2.jar")
+	compile files ("libs/ADGLib-0.0.2.jar")
+	compileOnly "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.13.508"
 }
 
 processResources {
