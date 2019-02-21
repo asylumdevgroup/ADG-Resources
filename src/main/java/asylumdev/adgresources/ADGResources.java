@@ -1,54 +1,82 @@
 package asylumdev.adgresources;
 
+import java.util.stream.Collectors;
+
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import asylumdev.adglib.ADGLib;
-import asylumdev.adglib.core.ADGMod;
-import asylumdev.adgresources.proxy.CommonProxy;
-import asylumdev.adgresources.util.ADGResourcesConfig;
-import asylumdev.adgresources.util.ADGResourcesTab;
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
+import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod (modid = ADGResourcesConstants.MODID, name = ADGResourcesConstants.NAME, version = ADGResourcesConstants.VERSION, dependencies = ADGResourcesConstants.DEPENDENCIES, useMetadata = true)
-public class ADGResources implements ADGMod {
-	
-	@SidedProxy(clientSide = "asylumdev.adgresources.proxy.ClientProxy", serverSide = "asylumdev.adgresources.proxy.ServerProxy")
-	public static CommonProxy proxy;
-	public static final ADGResourcesTab resourcesTab = new ADGResourcesTab();
+@Mod("adgresources")
+public class ADGResources {
+	private static final Logger LOGGER = LogManager.getLogger();
 
-	@Mod.Instance
-	public static ADGResources instance;
+    public ADGResources() {
+        // Register the setup method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        // Register the enqueueIMC method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
+        // Register the processIMC method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+        // Register the doClientStuff method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
-	public static Logger logger;
+        // Register ourselves for server and other game events we are interested in
+        MinecraftForge.EVENT_BUS.register(this);
+    }
 
-	@Mod.EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
-	    logger = event.getModLog();
-	    proxy.preInit(event);
-	}
+    private void setup(final FMLCommonSetupEvent event)
+    {
+        // some preinit code
+        LOGGER.info("HELLO FROM PREINIT");
+        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+    }
 
-	@Mod.EventHandler
-	public void init(FMLInitializationEvent e) {
-	    proxy.init(e);
-	}
+    private void doClientStuff(final FMLClientSetupEvent event) {
+        // do something that can only be done on the client
+        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
+    }
 
-	@Mod.EventHandler
-	public void postInit(FMLPostInitializationEvent e) {
-	    proxy.postInit(e);
-	}
+    private void enqueueIMC(final InterModEnqueueEvent event)
+    {
+        // some example code to dispatch IMC to another mod
+        InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
+    }
 
-	@Override
-	public void getConfig() {
-		ADGResourcesConfig.readConfig();
-		
-	}
+    private void processIMC(final InterModProcessEvent event)
+    {
+        // some example code to receive and process InterModComms from other mods
+        LOGGER.info("Got IMC {}", event.getIMCStream().
+                map(m->m.getMessageSupplier().get()).
+                collect(Collectors.toList()));
+    }
+    // You can use SubscribeEvent and let the Event Bus discover methods to call
+    @SubscribeEvent
+    public void onServerStarting(FMLServerStartingEvent event) {
+        // do something when the server starts
+        LOGGER.info("HELLO from server starting");
+    }
 
-	@Override
-	public String getModId() {
-		return ADGResourcesConstants.MODID;
-	}
+    // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
+    // Event bus for receiving Registry Events)
+    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
+    public static class RegistryEvents {
+        @SubscribeEvent
+        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
+            // register a new block here
+            LOGGER.info("HELLO from Register Block");
+        }
+    }
 }
