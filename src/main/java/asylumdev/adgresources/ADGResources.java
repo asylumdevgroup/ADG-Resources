@@ -19,7 +19,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod("adgresources")
+@Mod(ADGResourcesConstants.MODID)
 public class ADGResources {
 	private static final Logger LOGGER = LogManager.getLogger();
 
