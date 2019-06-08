@@ -93,7 +93,32 @@ public class ADGResources {
     				ModItems.advancium_nugget = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("advancium_nugget")),
     				ModItems.advancium_dust = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("advancium_dust")),
     				ModItems.advancium_plate = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("advancium_plate")),
-    				ModItems.advancium_gear = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("advancium_gear"))
+    				ModItems.advancium_gear = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("advancium_gear")),
+    				ModItems.copper_ingot = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("copper_ingot")),
+    	    		ModItems.copper_nugget = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("copper_nugget")),
+    	    		ModItems.copper_dust = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("copper_dust")),
+    	    		ModItems.copper_plate = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("copper_plate")),
+    	    		ModItems.copper_gear = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("copper_gear")),
+    	    		ModItems.tin_ingot = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("tin_ingot")),
+    	    		ModItems.tin_nugget = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("tin_nugget")),
+    	    		ModItems.tin_dust = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("tin_dust")),
+    	    		ModItems.tin_plate = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("tin_plate")),
+    	    		ModItems.tin_gear = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("tin_gear")),
+    	    		ModItems.aluminum_ingot = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("aluminum_ingot")),
+    	    		ModItems.aluminum_nugget = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("aluminum_nugget")),
+    	    		ModItems.aluminum_dust = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("aluminum_dust")),
+    	    		ModItems.aluminum_plate = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("aluminum_plate")),
+    	    		ModItems.aluminum_gear = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("aluminum_gear")),
+    	    		ModItems.lead_ingot = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("lead_ingot")),
+    	    		ModItems.lead_nugget = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("lead_nugget")),
+    	    		ModItems.lead_dust = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("lead_dust")),
+    	    		ModItems.lead_plate = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("lead_plate")),
+    	    		ModItems.lead_gear = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("lead_gear")),
+    	    		ModItems.silver_ingot = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("silver_ingot")),
+    	    		ModItems.silver_nugget = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("silver_nugget")),
+    	    		ModItems.silver_dust = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("silver_dust")),
+    	    		ModItems.silver_plate = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("silver_plate")),
+    	    		ModItems.silver_gear = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("silver_gear"))
     				
     		);
     		LOGGER.info("Items registered");
