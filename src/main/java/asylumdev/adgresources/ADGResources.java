@@ -5,8 +5,11 @@ import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import asylumdev.adgresources.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -24,7 +27,7 @@ public class ADGResources {
 	private static final Logger LOGGER = LogManager.getLogger();
 
 	public static ADGResources instance;
-	
+	public static ADGResourcesTab modGroup = new ADGResourcesTab();
 	
     public ADGResources() {
     	instance = this;
@@ -77,10 +80,31 @@ public class ADGResources {
     // Event bus for receiving Registry Events)
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
+    	@SubscribeEvent
+    	public static void registerItems(final RegistryEvent.Register<Item> event) {
+    		event.getRegistry().registerAll(
+    				ModItems.iron_dust = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("iron_dust")),
+    				ModItems.iron_plate = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("iron_plate")),
+    				ModItems.iron_gear = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("iron_gear")),
+    				ModItems.gold_dust = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("gold_dust")),
+    	    		ModItems.gold_plate = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("gold_plate")),
+    	    		ModItems.gold_gear = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("gold_gear")),
+    				ModItems.advancium_ingot = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("advancium_ingot")),
+    				ModItems.advancium_nugget = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("advancium_nugget")),
+    				ModItems.advancium_dust = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("advancium_dust")),
+    				ModItems.advancium_plate = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("advancium_plate")),
+    				ModItems.advancium_gear = new Item(new Item.Properties().group(modGroup)).setRegistryName(location("advancium_gear"))
+    				
+    		);
+    		LOGGER.info("Items registered");
+    	}
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
             // register a new block here
-            LOGGER.info("HELLO from Register Block");
+            LOGGER.info("Blocks registered");
+        }
+        private static ResourceLocation location(String name) {
+        	return new ResourceLocation(ADGResourcesConstants.MODID, name);
         }
     }
 }
