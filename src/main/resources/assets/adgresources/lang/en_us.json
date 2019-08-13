@@ -1,4 +1,6 @@
 {
+	"itemGroup.adgresources": "ADG Resources",
+	
 	"item.adgresources.iron_dust": "Iron Dust",
 	"item.adgresources.iron_plate": "Iron Plate",
 	"item.adgresources.iron_gear": "Iron Gear",
@@ -34,6 +36,24 @@
 	"item.adgresources.silver_nugget": "Silver Nugget",
 	"item.adgresources.silver_dust": "Silver Dust",
 	"item.adgresources.silver_plate": "Silver Plate",
-	"item.adgresources.silver_gear": "Silver Gear"
+	"item.adgresources.silver_gear": "Silver Gear",
+	"item.adgresources.bronze_ingot": "Bronze Ingot",
+	"item.adgresources.bronze_nugget": "Bronze Nugget",
+	"item.adgresources.bronze_dust": "Bronze Dust",
+	"item.adgresources.bronze_plate": "Bronze Plate",
+	"item.adgresources.bronze_gear": "Bronze Gear",
+	
+	"block.adgresources.advancium_ore": "Advancium Ore",
+	"block.adgresources.copper_ore": "Copper Ore",
+	"block.adgresources.tin_ore": "Tin Ore",
+	"block.adgresources.aluminum_ore": "Aluminum Ore",
+	"block.adgresources.lead_ore": "Lead Ore",
+	"block.adgresources.silver_ore": "Silver Ore",
+	"block.adgresources.advancium_block": "Advancium Block",
+	"block.adgresources.copper_block": "Copper Block",
+	"block.adgresources.tin_block": "Tin Block",
+	"block.adgresources.aluminum_block": "Aluminum Block",
+	"block.adgresources.lead_block": "Lead Block",
+	"block.adgresources.silver_block": "Silver Block"
 	
 }

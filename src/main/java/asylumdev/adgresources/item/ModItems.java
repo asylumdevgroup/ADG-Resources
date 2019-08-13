@@ -39,6 +39,24 @@ public class ModItems {
 	public static Item silver_dust;
 	public static Item silver_plate;
 	public static Item silver_gear;
+	public static Item bronze_ingot;
+	public static Item bronze_nugget;
+	public static Item bronze_dust;
+	public static Item bronze_plate;
+	public static Item bronze_gear;
 	
-	
+	//ItemBlocks
+	public static Item advancium_ore;
+	public static Item copper_ore;
+	public static Item tin_ore;
+	public static Item aluminum_ore;
+	public static Item lead_ore;
+	public static Item silver_ore;
+	public static Item advancium_block;
+	public static Item copper_block;
+	public static Item tin_block;
+	public static Item aluminum_block;
+	public static Item lead_block;
+	public static Item silver_block;
+	public static Item bronze_block;
 }

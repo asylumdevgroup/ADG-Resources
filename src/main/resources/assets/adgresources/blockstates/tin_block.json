@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "adgresources:block/tin_block" }
+    }
+}
