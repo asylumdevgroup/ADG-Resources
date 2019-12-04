@@ -1,7 +1,6 @@
 package asylumdev.adgresources;
 
 import asylumdev.adgresources.block.ModBlocks;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 

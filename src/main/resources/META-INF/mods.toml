@@ -26,7 +26,7 @@ logoFile="examplemod.png" #optional
 # A text field displayed in the mod UI
 credits="Thanks to McJty and Harry Talks, for their amazing tutorials" #optional
 # A text field displayed in the mod UI
-authors="MCAdventureCity, CJWilk" #optional
+authors="MCAdventureCity" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 Asylum Development Group's Resource Module. It adds 100% configurable resources, and every resource under the sun, plus more!
@@ -38,7 +38,7 @@ Asylum Development Group's Resource Module. It adds 100% configurable resources,
     # Does this dependency have to exist - if not, ordering below must be specified
     mandatory=true #mandatory
     # The version range of the dependency
-    versionRange="[25,)" #mandatory
+    versionRange="[28,)" #mandatory
     # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
@@ -47,6 +47,6 @@ Asylum Development Group's Resource Module. It adds 100% configurable resources,
 [[dependencies.examplemod]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.13.2]"
+    versionRange="[1.14.4]"
     ordering="NONE"
     side="BOTH"
