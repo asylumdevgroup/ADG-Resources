@@ -21,23 +21,23 @@ public class OregenConfig {
 		server.comment("Oregen Config");
 		
 		advancium_chance = server
-				.comment("Maximum number of ore veins of Advancium ore that can spawn in one chunk.")
+				.comment("Maximum number of ore blocks of Advancium ore that can spawn in one vein.")
 				.defineInRange("oregen.advancium_chance", 8, 1, 1000000);
 		copper_chance = server
-				.comment("Maximum number of ore veins of Copper ore that can spawn in one chunk.")
+				.comment("Maximum number of ore blocks of Copper ore that can spawn in one vein.")
 				.defineInRange("oregen.copper_chance", 8, 1, 1000000);
 		tin_chance = server
-				.comment("Maximum number of ore veins of Tin ore that can spawn in one chunk.")
+				.comment("Maximum number of ore blocks of Tin ore that can spawn in one vein.")
 				.defineInRange("oregen.tin_chance", 8, 1, 1000000);
 		aluminum_chance = server
-				.comment("Maximum number of ore veins of Aluminum ore that can spawn in one chunk.")
-				.defineInRange("oregen.aluminum_chance", 7, 1, 1000000);
+				.comment("Maximum number of ore blocks of Aluminum ore that can spawn in one vein.")
+				.defineInRange("oregen.aluminum_chance", 8, 1, 1000000);
 		lead_chance = server
-				.comment("Maximum number of ore veins of Lead ore that can spawn in one chunk.")
-				.defineInRange("oregen.lead_chance", 5, 1, 1000000);
+				.comment("Maximum number of ore blocks of Lead ore that can spawn in one vein.")
+				.defineInRange("oregen.lead_chance", 8, 1, 1000000);
 		silver_chance = server
-				.comment("Maximum number of ore veins of Silver ore that can spawn in one chunk.")
-				.defineInRange("oregen.silver_chance", 5, 1, 1000000);
+				.comment("Maximum number of ore blocks of Silver ore that can spawn in one vein.")
+				.defineInRange("oregen.silver_chance", 8, 1, 1000000);
 		
 		generate_advancium = server
 				.comment("Decide if you want Advancium ore to spawn in the overworld")

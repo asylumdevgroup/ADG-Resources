@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import asylumdev.adgresources.block.ModBlocks;
 import asylumdev.adgresources.config.Config;
 import asylumdev.adgresources.item.ModItems;
+import asylumdev.adgresources.world.OreGeneration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
@@ -58,7 +59,7 @@ public class ADGResources {
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        // some preinit code
+        OreGeneration.setupOreGeneration();
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
