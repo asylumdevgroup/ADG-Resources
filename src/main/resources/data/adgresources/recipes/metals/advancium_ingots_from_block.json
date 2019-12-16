@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:storage_blocks/advancium"
+    }
+  ],
+  "result": {
+    "item": "adgresources:advancium_ingot",
+    "count": 9
+  }
+}

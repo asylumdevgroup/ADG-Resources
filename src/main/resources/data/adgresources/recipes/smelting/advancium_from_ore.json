@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "forge:ores/advancium"
+    },
+    "result": "adgresources:advancium_ingot",
+    "experience": 1.0,
+    "cookingtime": 200
+}
